@@ -56,4 +56,4 @@ String PLOTLIST[] = {"Testing", "General", "Nursery", "Compost","plot 1", "plot 
 // TYPE 08: Soil temperature - 4 values
 // TYPE 09: Soil humidity - 4 values
 
-const int quantityOfVal[10] = {1,1,1,1,1,1,1,2,4,4}; //number of data read per sensor; for example, wind => direction & force
+const int quantityOfVal[10] = {1,1,1,1,1,1,1,2,4,4}; //number of data read per sensor; for example, wind => force & direction
