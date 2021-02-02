@@ -57,7 +57,7 @@ void loop() {
 
    int id_node = GetInteger(ID_NODE);
    String route = "/Gardens/"+GARDEN+"/sensorData/"+PLOTLIST[id_node]+"/Data/";
-   //Serial.println(SendFirebase(route, JsonSerialized));
+   Serial.println(SendFirebase(route, JsonSerialized));
   
    doc.clear(); // VERY IMPORTANT; don't remove
   
@@ -95,60 +95,62 @@ String Readvalues (void){
   char buffvalues[SizeBuffer];
   char * Data_buffer_ptr =  buffvalues;
   int j = 0;
-  /******* Build an HEX string with TYPE+FIELD tuples **********/
+  
+  /******* Build an HEX string with TYPE+VALUE tuples *************/
+  /************ %01f -> float or %04d -->int **********************/
+  /********** Enable, disable and adapt ***************************/
 
   //sprintf((Data_buffer_ptr + j), "%02X", 00); // TYPE 00
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readBgt (A0)); //Brightness
+  //sprintf((Data_buffer_ptr + j), "%04d", readBgt (A0)); //Brightness
   //j = j + 4;
 
-/************ EXAMPLE OF FLOAT SENDING **************************/
-  sprintf((Data_buffer_ptr + j), "%02X", 01); // TYPE 01
-  j = j + 2;
-  sprintf((Data_buffer_ptr + j), "%01f", pruebas (A0)); //Temperature
-  j = j + 4;
-  Serial.println(pruebas (A0));
+  //sprintf((Data_buffer_ptr + j), "%02X", 01); // TYPE 01
+  //j = j + 2;
+  //sprintf((Data_buffer_ptr + j), "%04d", readDHT_h (A0)); //Temperature
+  //j = j + 4;
+  //Serial.println(pruebas (A0));
 
-  sprintf((Data_buffer_ptr + j), "%02X", 02); // TYPE 02
-  j = j + 2;
-  sprintf((Data_buffer_ptr + j), "%01f", readDHT_h (A0)); //Humidity
-  j = j + 4;
+  //sprintf((Data_buffer_ptr + j), "%02X", 02); // TYPE 02
+  //j = j + 2;
+  //sprintf((Data_buffer_ptr + j), "%04d", readDHT_h (A0)); //Humidity
+  //j = j + 4;
 
   //sprintf((Data_buffer_ptr + j), "%02X", 03); // TYPE 03
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readPH (A0)); //PH
+  //sprintf((Data_buffer_ptr + j), "%04d", readPH (A0)); //PH
   //j = j + 4;
 
   //sprintf((Data_buffer_ptr + j), "%02X", 04); // TYPE 04
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readNoise (A0)); //Noise
+  //sprintf((Data_buffer_ptr + j), "%04d", readNoise (A0)); //Noise
   //j = j + 4;
 
   //sprintf((Data_buffer_ptr + j), "%02X", 05); // TYPE 05
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readCO2 (A0)); //Air quality
+  //sprintf((Data_buffer_ptr + j), "%04d", readCO2 (A0)); //Air quality
   //j = j + 4;
   
   //sprintf((Data_buffer_ptr + j), "%02X", 06); // TYPE 06
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readWLevel (A0)); //Noise
+  //sprintf((Data_buffer_ptr + j), "%04d", readWLevel (A0)); //Noise
   //j = j + 4;
   
   //sprintf((Data_buffer_ptr + j), "%02X", 07); // TYPE 07
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readWf (A0)); //Wind force  
+  //sprintf((Data_buffer_ptr + j), "%04d", readWf (A0)); //Wind force  
   //j = j + 4;  
-  //sprintf((Data_buffer_ptr + j), "%01f", readWd (A0)); //Wind direction
+  //sprintf((Data_buffer_ptr + j), "%04d", readWd (A0)); //Wind direction
   //j = j + 4;
   
   //sprintf((Data_buffer_ptr + j), "%02X", 08); // TYPE 08
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readSoilTem (A0)); //Soil temperature
+  //sprintf((Data_buffer_ptr + j), "%04d", readSoilTem (A0)); //Soil temperature
   //j = j + 4;
   
   //sprintf((Data_buffer_ptr + j), "%02X", 09); // TYPE 09
   //j = j + 2;
-  //sprintf((Data_buffer_ptr + j), "%01f", readSoilHum (A0)); //Soil humidity
+  //sprintf((Data_buffer_ptr + j), "%04d", readSoilHum (A0)); //Soil humidity
   //j = j + 4;
 
   Serial.print(" Buffer filled .....  ");
