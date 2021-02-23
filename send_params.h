@@ -8,7 +8,7 @@ String  GARDEN = " "; //Name of target garden
 
 String PLOTLIST[] = {"Testing", "General", "Nursery", "Compost","plot 1", "plot 2", "plot 3", "plot 4", "plot 5", "plot 6", "plot 7"};
 
-#define ID_NODE "05" // an example: this code insertes values in the nursery space
+#define ID_NODE "02" // an example: this code insertes values in the nursery space
 
 /*Note.- "Testing" is unused in the APP project. Just for testing issues, don't remove ******/
 
