@@ -16,17 +16,13 @@ int readSoilHum (int pin); //soil moisture
 
 
 /************** BASIC READING FUNCTION  Example **************************************/
-int ReadSensor(int pin) {
-  int output_value = analogRead(pin); //analog or digital; remove and make your own function here
-  return output_value; //change the return by int or float
-}
+//int ReadSensor(int pin) {
+ // int output_value = analogRead(pin); //analog or digital; remove and make your own function here
+ // return output_value; //change the return by int or float
+//}
 /************** AD-HOC READING FUNCTIONS **********************************************/
 
 
-/****** Soil moisture sensor: humidity; 1 value *********************************************/
-int readSoilHum (int pin) {
-  
-}
 /****** CO2 sensor: air quality; 1 value *********************************************/
 int readCO2(int pin) {
   
@@ -59,4 +55,8 @@ int readW_d (int pin) {
 /****** Pluviometric sensor: level; 1 value *********************************************/
 int readWLevel (int pin) {
     
+}
+  /****** Soil moisture sensor: humidity; 1 value *********************************************/
+int readSoilHum (int pin) {
+  
 }
